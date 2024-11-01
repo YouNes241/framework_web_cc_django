@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des collections</title>
+</head>
+
+<body>
+    <ol>{% for collec in collec_list %}
+        <ul>
+            <li>
+                <b> Titre : </b> {{collec.title}}
+            </li>
+            <li>
+                <b> Date de publication : </b> {{collec.date}}
+            </li>
+            <li>
+                <a href={% url 'collecinfos' collec.id %}>Détails</a>
+            </li>
+        </ul>
+        {% endfor %}
+    </ol>
+</body>
+
+</html>
